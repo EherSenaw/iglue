@@ -60,6 +60,7 @@ if "--cpp_ext" in sys.argv:
                      ['csrc/flatten_unflatten.cpp',]))
 
 def check_cuda_torch_binary_vs_bare_metal(cuda_dir):
+    '''
     raw_output = subprocess.check_output([cuda_dir + "/bin/nvcc", "-V"], universal_newlines=True)
     output = raw_output.split()
     release_idx = output.index("release") + 1
@@ -79,6 +80,8 @@ def check_cuda_torch_binary_vs_bare_metal(cuda_dir):
                            "In some cases, a minor-version mismatch will not cause later errors:  " +
                            "https://github.com/NVIDIA/apex/pull/323#discussion_r287021798.  "
                            "You can try commenting out this check (at your own risk).")
+    '''
+    pass
 
 # Set up macros for forward/backward compatibility hack around
 # https://github.com/pytorch/pytorch/commit/4404762d7dd955383acee92e6f06b48144a0742e
